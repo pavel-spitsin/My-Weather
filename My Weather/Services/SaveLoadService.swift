@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class SaveLoadService {
     
@@ -30,26 +31,30 @@ final class SaveLoadService {
     //MARK: - Actions
     
     public func load() -> [String] {
+        let realm = try! Realm()
         var loadedCities = [String]()
-        if let data = UserDefaults.standard.data(forKey: "Cities") {
-            do {
-                let decoder = JSONDecoder()
-                let cities = try decoder.decode([String].self, from: data)
-                loadedCities = cities
-            } catch {
-                print("Unable to Decode Notes (\(error))")
-            }
+        realm.objects(City.self).forEach {
+            loadedCities.append($0.name)
         }
         return loadedCities
     }
-        
+    
     public func save(cities: [String]) {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(cities)
-            UserDefaults.standard.set(data, forKey: "Cities")
-        } catch {
-            print("Unable to Cities (\(error))")
+        let realm = try! Realm()
+        cities.forEach {
+            let city = City(name: $0)
+            try! realm.write {
+                realm.add(city)
+            }
         }
+    }
+}
+
+final class City: Object {
+    @objc dynamic var name: String = ""
+    
+    convenience init(name: String) {
+        self.init()
+        self.name = name
     }
 }
