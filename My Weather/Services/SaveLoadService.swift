@@ -41,6 +41,9 @@ final class SaveLoadService {
     
     public func save(cities: [String]) {
         let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
         cities.forEach {
             let city = City(name: $0)
             try! realm.write {
