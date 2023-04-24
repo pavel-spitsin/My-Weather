@@ -12,6 +12,8 @@
 		E92A94BE292BAEEA005A4193 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A94BD292BAEEA005A4193 /* BaseViewController.swift */; };
 		E92A94C0292BB4D7005A4193 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A94BF292BB4D7005A4193 /* LocationService.swift */; };
 		E92A94C3292BD4FB005A4193 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A94C2292BD4FB005A4193 /* Extensions.swift */; };
+		E94A316729F735940072F57D /* MapScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A316429F735940072F57D /* MapScreenViewModel.swift */; };
+		E94A316829F735940072F57D /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A316629F735940072F57D /* MapScreenView.swift */; };
 		E9583E9329F6A69A008F2D86 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E9583E9229F6A69A008F2D86 /* Realm */; };
 		E9583E9529F6A69A008F2D86 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9583E9429F6A69A008F2D86 /* RealmSwift */; };
 		E96E5040295DE41E00BC6F57 /* SaveLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E503F295DE41E00BC6F57 /* SaveLoadService.swift */; };
@@ -46,6 +48,8 @@
 		E92A94BD292BAEEA005A4193 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E92A94BF292BB4D7005A4193 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		E92A94C2292BD4FB005A4193 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E94A316429F735940072F57D /* MapScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewModel.swift; sourceTree = "<group>"; };
+		E94A316629F735940072F57D /* MapScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenView.swift; sourceTree = "<group>"; };
 		E96E503F295DE41E00BC6F57 /* SaveLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadService.swift; sourceTree = "<group>"; };
 		E9762D9829229CF800A6B8C5 /* My Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9762D9B29229CF800A6B8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,31 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E94A316229F735940072F57D /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E94A316329F735940072F57D /* Model */,
+				E94A316529F735940072F57D /* View */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		E94A316329F735940072F57D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E94A316429F735940072F57D /* MapScreenViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E94A316529F735940072F57D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E94A316629F735940072F57D /* MapScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E9762D8F29229CF800A6B8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +246,7 @@
 				E924000B2922AA1B001FD500 /* MainScreen */,
 				E924000F2922AA8A001FD500 /* ListScreen */,
 				E92400132922AAFE001FD500 /* SearchScreen */,
+				E94A316229F735940072F57D /* MapScreen */,
 				E9762DA429229CFA00A6B8C5 /* Assets.xcassets */,
 				E9762DA629229CFA00A6B8C5 /* LaunchScreen.storyboard */,
 				E9762DA929229CFA00A6B8C5 /* Info.plist */,
@@ -324,8 +354,10 @@
 				E9F7507029B3EB8000D94BB3 /* CurrentWeatherDataModel.swift in Sources */,
 				E9F7507629BA1A3300D94BB3 /* ListViewCellViewModel.swift in Sources */,
 				E9DBC0E529951DA30094EC2D /* ParametersListView.swift in Sources */,
+				E94A316829F735940072F57D /* MapScreenView.swift in Sources */,
 				E9DBC0DB298ED8E30094EC2D /* MainInfoView.swift in Sources */,
 				E9F7506E29B24FAF00D94BB3 /* ValueCalculator.swift in Sources */,
+				E94A316729F735940072F57D /* MapScreenViewModel.swift in Sources */,
 				E9DBC0F929AF8EFE0094EC2D /* MainScreenViewModel.swift in Sources */,
 				E9DBC0E92995782F0094EC2D /* ListScreenView.swift in Sources */,
 				E9DBC0EB299578ED0094EC2D /* ListViewCell.swift in Sources */,
