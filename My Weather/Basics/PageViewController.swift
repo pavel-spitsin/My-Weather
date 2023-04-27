@@ -25,10 +25,7 @@ class PageViewController: UIPageViewController {
                                               y: view.frame.height - 70,
                                               width: view.frame.width,
                                               height: 70))
-        let mapItem = UIBarButtonItem(image: UIImage(systemName: "map"),
-                                       style: .done,
-                                       target: self,
-                                       action: #selector(openMapAction))
+        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                             target: nil,
                                             action: nil)
@@ -36,9 +33,8 @@ class PageViewController: UIPageViewController {
                                        style: .done,
                                        target: self,
                                        action: #selector(openCityListAction))
-        mapItem.tintColor = .customTextColor
         listItem.tintColor = .customTextColor
-        toolBar.items = [mapItem, flexibleSpace, listItem]
+        toolBar.items = [flexibleSpace, listItem]
         toolBar.isTranslucent = false
         toolBar.barTintColor = .customBackgroundColor
         toolBar.sizeToFit()
@@ -88,12 +84,6 @@ class PageViewController: UIPageViewController {
     }
     
     //MARK: - Actions
-    
-    @objc private func openMapAction() {
-        let viewController = MapScreenView(viewModel: MapScreenViewModel())
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
-    }
     
     @objc private func openCityListAction() {
         let viewController = ListScreenView(openSearchAction: openSearchViewAction,
